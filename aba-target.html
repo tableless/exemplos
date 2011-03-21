@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>untitled</title>
+	<style type="text/css" media="screen">
+	* {margin:0; padding:0;}
+	body {
+		font:13px verdana, arial, tahoma;
+	}
+	
+	ul { margin:20px 20px 0; list-style:none;}
+	li {float:left;}
+	.itens a {
+		float:left;
+		border:1px solid black;
+		background:gray;
+		padding:5px 15px;
+		color:#FFF;
+		text-decoration:none;
+	}
+	
+	.itens a:focus {background:red;}
+
+	.aba { padding:0 20px;width:400px; clear:both;}
+	.aba div {
+		background:white;
+		border:1px solid black;
+		padding:10px;
+		width:100%;
+		display:none;
+	}
+
+
+	.aba div:first-child {
+		display:block;
+	}
+	.aba div:target {
+		display:block;
+	}
+	</style>
+	
+</head>
+
+<body>
+
+<ul class="itens">
+	<li><a href="#aba1">Aba 1</a></li>
+	<li><a href="#aba2">Aba 2</a></li>
+	<li><a href="#aba3">Aba 3</a></li>
+</ul>
+<div class="aba">
+	<div id="aba1">
+		Primeira Aba
+	</div>
+	<div id="aba2">
+		Primeira Aba 2
+	</div>
+	<div id="aba3">
+		Primeira Aba 3
+	</div>
+</div>
+
+</body>
+</html>
