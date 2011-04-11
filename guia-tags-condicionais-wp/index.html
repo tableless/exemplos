@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <title>Guia de Referência das Tags Condicionais | WordPress - Tableless</title>
+    <meta name="description" content="Guia de Referência das tags condicionais do Wordpress" />
+    <meta name="author" content="Paulo Rodrigues" />
+    <link href="estilo.css" rel="stylesheet" type="text/css" />
+    <!--[if IE]>
+        <script src="http://www.tableless.com.br/wp-content/themes/tableless2011/js/html5.js" type="text/javascript"></script>
+    <![endif]-->
+    <script type="text/javascript" src="http://www.tableless.com.br/wp-content/themes/tableless2011/js/jquery.js"></script>    
+</head>
+
+<body>
+    <div id="container">        
+	    <header>
+	        <h1>Guia de Referência de Tags Condicionais do WordPress</h1>        
+	    </header>
+	    <div id="content">
+	        <dl>             
+	            <dt>comments_open()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se os comentários são permitidos no post.</p>
+	                <pre>&lt;?php comments_open( $post_id ); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>$post_id -> O ID do Post</p>
+	                <p>Parametro obrigatório</p>
+	                <p>Padrão: None</p>                
+	            </dd>        
+	            <dt>is_404()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se a página de erro 404 está sendo exibida</p>
+	                <pre>&lt;?php is_404(); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>Esta tag não requer parâmetro</p>                                
+	            </dd>        
+	            <dt>is_admin()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se a página de adminstração está sendo exibida</p>
+	                <pre>&lt;?php is_admin(); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>Esta tag não requer parâmetro</p>                                
+	            </dd>        
+	            <dt>is_archive()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se qualquer tipo de página de Arquivo está sendo exibida, seja ela de: Autor, Categoria, Tags, ect  </p>
+	                <pre>&lt;?php is_archive(); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>Esta tag não requer parâmetro</p>                                
+	            </dd>        
+	            <dt>is_attachment()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se qualquer tipo de anexo está sendo exibido</p>
+	                <pre>&lt;?php is_attachment(); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>Esta tag não requer parâmetro</p>                                
+	            </dd>        
+	            <dt>is_author()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se uma página de arquivo de autor está sendo exibida</p>
+	                <pre>&lt;?php is_author($author); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>$author -> O ID do autor ou Nickname do autor</p>
+	                <p>Parametro opicional</p>
+	                <p>Padrão: None</p>                                 
+	            </dd>        
+	            <dt>is_category()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se uma página de arquivo de categoria está sendo exibida</p>
+	                <pre>&lt;?php is_category($category); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>$author -> O ID da categoria ou o título da categoria ou o slug da categoria</p>
+	                <p>Parametro opicional</p>
+	                <p>Padrão: None</p>                                 
+	            </dd>        
+	            <dt>is_comments_popup()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica comentários em janela popup</p>
+	                <pre>&lt;?php is_comments_popup(); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>Esta tag não requer parâmetro</p>                                 
+	            </dd>        
+	            <dt>is_date()</dt>
+	            <dd>
+	                <p>Esta tag condicional testa para ver se a página é uma página de arquivo data base</p>
+	                <pre>&lt;?php is_date(); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>Esta tag não requer parâmetro</p>                                 
+	            </dd>        
+	            <dt>is_day()</dt>
+	            <dd>
+	                <p>Esta tag condicional testa para ver se a página é uma página de arquivo da data base</p>
+	                <pre>&lt;?php is_day(); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>Esta tag não requer parâmetro</p>                                 
+	            </dd>        
+	            <dt>is_feed()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica a consulta para o feed</p>
+	                <pre>&lt;?php is_feed(); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>Esta tag não requer parâmetro</p>                                 
+	            </dd>       
+	            <dt>is_front_page()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se a página inical está sendo exibida (usado para quando for páginas estáticas)</p>
+	                <pre>&lt;?php is_front_page(); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>Esta tag não requer parâmetro</p>                                 
+	            </dd>        
+	            <dt>is_home()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se a página inical está sendo exibida (geralmente usada quando a página home.php está inclusa no tema)</p>
+	                <pre>&lt;?php is_home(); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>Esta tag não requer parâmetro</p>                                 
+	            </dd>        
+	            <dt>is_local_attachment()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se o anexo é uma URL local e se é realmente um anexo</p>
+	                <pre>&lt;?php is_local_attachment($url); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>$url -> URL para consulta</p>
+	                <p>Parametro obrigatório</p>
+	                <p>Padrão: None</p>                                  
+	            </dd>        
+	            <dt>is_month()</dt>
+	            <dd>
+	                <p>Esta tag condicional testa para ver se a página é uma página de arquivo baseada em meses</p>
+	                <pre>&lt;?php is_month(); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>Esta tag não requer parâmetro</p>                                  
+	            </dd>                    
+	            <dt>is_page()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se a página está sendo exibida</p>
+	                <pre>&lt;?php is_page($page); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>$page -> O ID da página ou o título da página ou o slug da página</p>
+	                <p>Parametro opicional</p>
+	                <p>Padrão: None</p>                                  
+	            </dd>        
+	            <dt>is_page_template()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se um modelo de página está sendo usado em alguma página</p>
+	                <pre>&lt;?php is_page_template($template); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>$template -> O nome do arquivo modelo</p>
+	                <p>Parametro opicional</p>
+	                <p>Padrão: None</p>                                  
+	            </dd>        
+	            <dt>is_paged()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se a página que está sendo exibida é paginada</p>
+	                <pre>&lt;?php is_paged(); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>Esta tag não requer parâmetro</p>                                  
+	            </dd>       
+	            <dt>is_plugin_active()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se o plugin está ativo</p>
+	                <pre>&lt;?php is_plugin_active($plugin); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>$plugin -> O nome do plugin em sub-diretorio/file</p>
+	                <p>Parametro obrigatório</p>
+	                <p>Padrão: None</p>                                   
+	            </dd>       
+	            <dt>is_plugin_page()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se quando a solicitação atual é um plugin da página do painel do adminstração</p>
+	                <pre>&lt;?php is_plugin_page(); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>Esta tag não requer parâmetro</p>                                  
+	            </dd>                    
+	            <dt>is_search()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se a página de resultado da busca está sendo exibida</p>
+	                <pre>&lt;?php is_search(); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>Esta tag não requer parâmetro</p>                                  
+	            </dd> 
+	            <dt>is_single()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se a página de single post está sendo exibida</p>
+	                <pre>&lt;?php is_single($post); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>$post -> O ID do post ou o título do post ou o slug do post</p>
+	                <p>Parametro opicional</p>
+	                <p>Padrão: None</p>                                  
+	            </dd>        
+	            <dt>is_singular()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se a página singular está sendo exibida</p>
+	                <pre>&lt;?php is_singular($post_types); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>$post_types -> Tipo do post para verificar a consulta</p>
+	                <p>Parametro opicional</p>
+	                <p>Padrão: None</p>                                  
+	            </dd>        
+	            <dt>is_sticky()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se o post é tipo Sticky</p>
+	                <pre>&lt;?php is_sticky($post_ID); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>$post_ID -> O ID do post</p>
+	                <p>Parametro opicional</p>
+	                <p>Padrão: None</p>                                  
+	            </dd>        
+	            <dt>is_tag()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se a pagina de arquivo tag está sendo exibida</p>
+	                <pre>&lt;?php is_tag($slug); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>$slug -> O slug da Tag</p>
+	                <p>Parametro opicional</p>
+	                <p>Padrão: None</p>                                  
+	            </dd>  
+	            <dt>is_taxonomy_hierarchical()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se a taxonomia é hierárquica</p>
+	                <pre>&lt;?php is_taxonomy_hierarchical($taxonomy); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>$taxonomy -> O nome da taxonomia</p>
+	                <p>Parametro obrigatório</p>
+	                <p>Padrão: None</p>                                  
+	            </dd>
+	            <dt>in_category()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se o post atual ou qualquer outro post especificado é atribuido a qualquer das categorias estabelecidas</p>
+	                <pre>&lt;?php in_category($category, $_post); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>$category -> Categoria(s) estabelecida(s), pode ser especificado por ID, Nome ou Slug da categoria</p>
+	                <p>Parametro obrigatório</p>
+	                <p>Padrão: None</p>
+	                 
+	                <p class="variavel">$_post -> O(s) post(s), é especificado pelo ID</p>
+	                <p>Parametro opcional</p>
+	                <p>Padrão: None</p>                                 
+	            </dd>       
+	            <dt>in_the_loop()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se o loop está ativo no momento</p>
+	                <pre>&lt;?php in_the_loop(); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>Esta tag não requer parâmetro</p>                                  
+	            </dd>        
+	            <dt>is_active_sidebar()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se a sidebar está ativa</p>
+	                <pre>&lt;?php is_active_sidebar($index); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>$index -> O ID da sidebar ou o nome da sidebar ou o número da sidebar</p>
+	                <p>Parametro obrigatório</p>
+	                <p>Padrão: None</p>                                  
+	            </dd>                   
+	            <dt>is_dynamic_sidebar()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se a sidebar atual tem widgets ativo</p>
+	                <pre>&lt;?php is_dynamic_sidebar(); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>Esta tag não requer parâmetro</p>
+	            </dd>        
+	            <dt>is_user_logged_in()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se visitante atual está logado</p>
+	                <pre>&lt;?php is_user_logged_in(); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>Esta tag não requer parâmetro</p>
+	            </dd>        
+	            <dt>has_excerpt()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se o post atual contém Excerpt (resumo)</p>
+	                <pre>&lt;?php has_excerpt($id); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>$id -> O ID do post</p>
+	                <p>Parametro opicional</p>
+	                <p>Padrão: ID do post atual (exibido)</p>
+	            </dd>        
+	            <dt>has_post_thumbnail()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se o post atual contém post thumbnail (miniatura do post)</p>
+	                <pre>&lt;?php has_post_thumbnail($post_id); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>$post_id -> O ID do post</p>
+	                <p>Parametro opicional</p>
+	                <p>Padrão: ID do post atual (exibido)</p>
+	            </dd>       
+	                   
+	            <dt>pings_open()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se o post atual são permitidos pings</p>
+	                <pre>&lt;?php pings_open($post_id); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>$post_id -> O ID do post</p>
+	                <p>Parametro obrigatório</p>
+	                <p>Padrão: None</p>
+	            </dd>        
+	            <dt>email_exists()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se o endereço de e-mail já foi registrado por algum usuário. Retorna o ID do usuário, se falso não existe nenhum.</p>
+	                <pre>&lt;?php email_exists($email); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>$email -> E-mail para ser verificado</p>
+	                <p>Parametro obrigatório</p>
+	                <p>Padrão: None</p>
+	            </dd>        
+	            <dt>post_type_exists()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se existe o tipo de post.</p>
+	                <pre>&lt;?php post_type_exists($post_type); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>$post_type -> Tipo de post</p>
+	                <p>Parametro obrigatório</p>
+	                <p>Padrão: None</p>
+	            </dd>        
+	            <dt>taxonomy_exists()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se existe a taxonomia existe.</p>
+	                <pre>&lt;?php taxonomy_exists($taxonomy); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>$taxonomy -> Nome da taxonomia</p>
+	                <p>Parametro obrigatório</p>
+	                <p>Padrão: None</p>
+	            </dd>                    
+	            <dt>username_exists()</dt>
+	            <dd>
+	                <p>Esta tag condicional verifica se o username já foi registrado por outro usuário. Retorna o ID do usuário, se falso não existe nenhum.</p>
+	                <pre>&lt;?php username_exists($username); ?&gt;</pre>
+	                <h3>Parâmetros</h3>
+	                <p>$username -> Username para ser consultado</p>
+	                <p>Parametro obrigatório</p>
+	                <p>Padrão: None</p>
+	            </dd>   
+	        </dl>
+	    </div>
+	    <footer>
+	    	<h1 id="left"><a href="http://www.tableless.com.br" title="Tableless">Tableless</a></h1>
+	        <p id="right">Criado por <a href="http://twitter.com/paulorodriguesw" title="Paulo Rodrigues">Paulo Rodrigues</a></p>
+	    </footer>
+    </div> 
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#content dd").hide();
+            
+            $("#content dt").click(function(){
+                $("#content dd").slideUp(300);
+                $(this).next().slideDown(300);
+                $("#content dt").removeClass('ativo');
+                $(this).addClass('ativo');                
+            });
+            $("#content dd h3").next().css('font-weight', 'bold');
+            $("#content dd p").next().css('margin', '0px 40px');    
+            $("#content dd p.variavel").css('margin', '10px 0px 0px 0px');
+            $("#content dd p.variavel").css('font-weight', 'bold');
+        });
+    </script>       
+</body>
+</html>
