@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Carrinho Drag and Drop</title>
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js"></script>
+
+        <style>
+		*, html{ font-family: Helvetica, arial, sans-serif; margin: 0 0; padding: 0 0; }
+        body{ margin: 0 0; padding: 0 0; background-color:#D6D1CA; }
+		h1{ color: #594A40; letter-spacing:-2px ;text-align:center;font-size:46px;font-family:Helvetica, arial,sans-serif;text-transform:uppercase;margin:30px 0 0;}
+		div#container{ margin: 0 auto; width:960px; }
+
+		p{ margin: 10px 10px; }
+				ul#produtos{ list-style:none; }
+        div#carrinho-top{
+			background-color: #C92D21;
+			width: 960px;
+			color: #fff;
+			border-bottom:1px dashed #fff;
+			opacity: .8;
+			position:relative;
+	 	}
+		div#carrinho-info{ padding: 10px; }
+		div#carrinho-container{
+			height:240px;
+			position:absolute;
+			width:240px;
+			background-color:#fff;
+			border:2px solid #c92d21;
+			display:none;
+		}
+		div#carrinho-container ul{ overflow:auto; height:200px; margin: 10px; list-style:none; }
+		div#carrinho-container ul li{ color:#333; font-size:12px; border-bottom:1px dotted #ccc; text-align:center; margin:10px; }
+
+		ul#produtos li{
+			float: left;
+			background-color:#fff;
+			-moz-box-shadow: 5px 5px 5px #ccc;
+			  -webkit-box-shadow: 5px 5px 5px #ccc;
+			  box-shadow: 5px 5px 5px #ccc;
+			padding:10px;
+			margin:15px;
+			width:270px;
+			text-align:center;
+		}
+		ul#produtos li h3{
+			margin: 6px 0 6px 0;
+			color: #594A40;
+			background-color:#f2f2f2;
+			padding:6px;
+		}
+		p.preco-de{
+			color:red;
+			text-decoration:line-through;
+			font-size:11px;
+		}
+		p.preco-por{
+			color: #594A40;
+			font-weight:900;
+		}
+		.ui-state-hover{
+			height:160px;
+			border:4px dashed #000;
+		}
+        </style>
+
+    </head>
+    <body>
+
+
+
+		<div id="container">
+
+	        <div id="carrinho-top">
+				<div id="carrinho-info">
+					<p>Arraste produtos para esta área</p>
+				</div>
+				<div id="carrinho-container">
+	            	<ul id="carrinho-produtos">
+						<li class="adicione">Arraste produtos para esta área</li>
+					</ul>
+				</div>
+	        </div>
+
+				<h1>Pragmatic Bookshelf</h1>
+
+			<ul id="produtos">
+				<li class="produto-dd"><input type="hidden" class="produto-id" value="1" /><h3>Livro 1</h3><p><img src="_img/twa.jpg" width="75" height="90" /></p><p class="preco-de">De: R$31,00</p><p class="preco-por">Por: R$13,00</p></li>
+				<li class="produto-dd"><input type="hidden" class="produto-id" value="2" /><h3>Livro 2</h3><p><img src="_img/trevan.jpg" width="75" height="90" /></p><p class="preco-de">De: R$39,00</p><p class="preco-por">Por: R$20,00</p></li>
+				<li class="produto-dd"><input type="hidden" class="produto-id" value="3" /><h3>Livro 3</h3><p><img src="_img/rdbcd.jpg" width="75" height="90" /></p><p class="preco-de">De: R$20,00</p><p class="preco-por">Por: R$14,00</p></li>
+				<li class="produto-dd"><input type="hidden" class="produto-id" value="4" /><h3>Livro 4</h3><p><img src="_img/fr_eir.jpg" width="75" height="90" /></p><p class="preco-de">De: R$40,00</p><p class="preco-por">Por: R$18,00</p></li>
+				<li class="produto-dd"><input type="hidden" class="produto-id" value="5" /><h3>Livro 5</h3><p><img src="_img/bdcora.jpg" width="75" height="90" /></p><p class="preco-de">De: R$20,00</p><p class="preco-por">Por: R$18,00</p></li>
+				<li class="produto-dd"><input type="hidden" class="produto-id" value="6" /><h3>Livro 6</h3><p><img src="_img/jvrails.jpg" width="75" height="90" /></p><p class="preco-de">De: R$26,00</p><p class="preco-por">Por: R$10,00</p></li>
+				<li class="produto-dd"><input type="hidden" class="produto-id" value="7" /><h3>Livro 7</h3><p><img src="_img/jsaccess.jpg" width="75" height="90" /></p><p class="preco-de">De: R$40,00</p><p class="preco-por">Por: R$11,00</p></li>
+				<li class="produto-dd"><input type="hidden" class="produto-id" value="8" /><h3>Livro 8</h3><p><img src="_img/snfocus.jpg" width="75" height="90" /></p><p class="preco-de">De: R$39,00</p><p class="preco-por">Por: R$13,00</p></li>
+				<li class="produto-dd"><input type="hidden" class="produto-id" value="9" /><h3>Livro 9</h3><p><img src="_img/bmsft.jpg" width="75" height="90" /></p><p class="preco-de">De: R$28,00</p><p class="preco-por">Por: R$19,00</p></li>
+				<li class="produto-dd"><input type="hidden" class="produto-id" value="10" /><h3>Livro 10</h3><p><img src="_img/mzcd.jpg" width="75" height="90" /></p><p class="preco-de">De: R$22,00</p><p class="preco-por">Por: R$14,00</p></li>
+				<li class="produto-dd"><input type="hidden" class="produto-id" value="11" /><h3>Livro 11</h3><p><img src="_img/fr_j2r.jpg" width="75" height="90" /></p><p class="preco-de">De: R$23,00</p><p class="preco-por">Por: R$18,00</p></li>
+				<li class="produto-dd"><input type="hidden" class="produto-id" value="12" /><h3>Livro 12</h3><p><img src="_img/dkgrails.jpg" width="75" height="90" /></p><p class="preco-de">De: R$23,00</p><p class="preco-por">Por: R$14,00</p></li>
+				<li class="produto-dd"><input type="hidden" class="produto-id" value="13" /><h3>Livro 13</h3><p><img src="_img/amiphd.jpg" width="75" height="90" /></p><p class="preco-de">De: R$30,00</p><p class="preco-por">Por: R$15,00</p></li>
+				<li class="produto-dd"><input type="hidden" class="produto-id" value="14" /><h3>Livro 14</h3><p><img src="_img/pbdp.jpg" width="75" height="90" /></p><p class="preco-de">De: R$28,00</p><p class="preco-por">Por: R$19,00</p></li>
+				<li class="produto-dd"><input type="hidden" class="produto-id" value="15" /><h3>Livro 15</h3><p><img src="_img/rcctr.jpg" width="75" height="90" /></p><p class="preco-de">De: R$21,00</p><p class="preco-por">Por: R$13,00</p></li>
+				<li class="produto-dd"><input type="hidden" class="produto-id" value="16" /><h3>Livro 16</h3><p><img src="_img/tibmac.jpg" width="75" height="90" /></p><p class="preco-de">De: R$23,00</p><p class="preco-por">Por: R$16,00</p></li>
+				<li class="produto-dd"><input type="hidden" class="produto-id" value="17" /><h3>Livro 17</h3><p><img src="_img/fr_arr.jpg" width="75" height="90" /></p><p class="preco-de">De: R$34,00</p><p class="preco-por">Por: R$11,00</p></li>
+				<li class="produto-dd"><input type="hidden" class="produto-id" value="18" /><h3>Livro 18</h3><p><img src="_img/sfipad.jpg" width="75" height="90" /></p><p class="preco-de">De: R$32,00</p><p class="preco-por">Por: R$17,00</p></li>
+				<li class="produto-dd"><input type="hidden" class="produto-id" value="19" /><h3>Livro 19</h3><p><img src="_img/utc2.jpg" width="75" height="90" /></p><p class="preco-de">De: R$30,00</p><p class="preco-por">Por: R$16,00</p></li>
+				<li class="produto-dd"><input type="hidden" class="produto-id" value="20" /><h3>Livro 20</h3><p><img src="_img/dscpq.jpg" width="75" height="90" /></p><p class="preco-de">De: R$28,00</p><p class="preco-por">Por: R$15,00</p></li>
+				<li class="produto-dd"><input type="hidden" class="produto-id" value="21" /><h3>Livro 21</h3><p><img src="_img/tpp.jpg" width="75" height="90" /></p><p class="preco-de">De: R$27,00</p><p class="preco-por">Por: R$18,00</p></li>
+				<li class="produto-dd"><input type="hidden" class="produto-id" value="22" /><h3>Livro 22</h3><p><img src="_img/rails4.jpg" width="75" height="90" /></p><p class="preco-de">De: R$30,00</p><p class="preco-por">Por: R$13,00</p></li>
+				<li class="produto-dd"><input type="hidden" class="produto-id" value="23" /><h3>Livro 23</h3><p><img src="_img/svn2.jpg" width="75" height="90" /></p><p class="preco-de">De: R$38,00</p><p class="preco-por">Por: R$14,00</p></li>
+				<li class="produto-dd"><input type="hidden" class="produto-id" value="24" /><h3>Livro 24</h3><p><img src="_img/sdgis.jpg" width="75" height="90" /></p><p class="preco-de">De: R$33,00</p><p class="preco-por">Por: R$13,00</p></li>
+			</ul>
+
+
+			</div>
+
+    <script type="text/javascript">
+	var timerCarrinho = '';
+    $(function(){
+
+		$(window).scroll(function(){
+            var wtop	 	= $(this).scrollTop();
+			var carrinho 	= $('#carrinho-top');
+			var container	= $('#container');
+			var cheight 	= $(carrinho).height();
+            if( wtop > ( cheight / 2 ) )
+            {
+				$(container).css('margin-top', cheight+'px');
+                $(carrinho)
+					.css({
+	                    position: 'absolute'
+	                })
+					.animate({
+						marginTop: ( wtop - cheight ) + 'px'
+					}, 100);
+            }
+            else
+            {
+				$(container).css('margin-top', 0);
+                $(carrinho)
+					.stop(true, true)
+					.css({
+	                    position: 'relative',
+						marginTop: 0
+	                });
+            }
+        });
+
+		$('#produtos li').draggable({
+			helper: 'clone',
+			start: function()
+			{
+				clearTimeout( timerCarrinho );
+				$('#carrinho-container').show();
+			}
+		});
+
+		$('#carrinho-produtos').droppable({
+			hoverClass: 'ui-state-hover',
+			accept: '.produto-dd',
+			drop: function( event, ui )
+			{
+				$(this).find('.adicione').remove();
+				var cod = ui.draggable.find('.produto-id').val();
+				if( $(this).find('#clone-'+cod).length == 0 )
+				{
+					$('<li id="clone-'+cod+'" style="display:none;"></li>').html(ui.draggable.html()).prependTo( this );
+					$(this).find('li:first').slideDown();
+					var total_produtos = $(this).find('li').length;
+					$('#carrinho-info').html('<p>' + total_produtos + ' produto' + ( total_produtos > 1 ? 's' : '' ) + '</p>' );
+				}
+			}
+		});
+
+		$('#carrinho-container').mouseenter(function(){
+			clearTimeout( timerCarrinho );
+		});
+
+		$('#carrinho-container').mouseleave(function(){
+			var carrinho = $(this);
+			timerCarrinho = setTimeout( function(){
+				$(carrinho).slideUp();
+			}, 5000 );
+		});
+
+
+    });
+    </script>
+
+    </body>
+</html>
+

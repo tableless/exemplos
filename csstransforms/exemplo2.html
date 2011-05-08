@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>CSS Transforms - Tableless.com.br</title>
+	<style type="text/css" media="screen">
+		body {
+			background:#EFEFEF;
+		}
+		ul {
+			width:950px;
+			margin:100px auto 0;
+		}
+		ul li {
+			display:inline-block;
+			list-style:none;
+			vertical-align:middle;
+		}
+		ul li img {
+			-webkit-transform:scale(0.5);
+			-moz-transform:scale(0.5);
+			-o-transform:scale(0.5);
+			transform:scale(0.5);
+
+		}
+		
+		ul li img:hover {
+			-webkit-transform:scale(1.3) skew(30deg);
+			-moz-transform:scale(1.3) skew(30deg);
+			-o-transform:scale(1.3) skew(30deg);
+			transform:scale(0.5) skew(30deg);
+			
+		}
+		
+	</style>
+</head>
+<body>
+
+<ul>
+	<li><img src="images/img1.png" alt="" /></li>
+	<li><img src="images/img2.png" alt="" /></li>
+	<li><img src="images/img3.png" alt="" /></li>
+</ul>
+
+</body>
+</html>
