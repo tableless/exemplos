@@ -17,24 +17,67 @@
 			-webkit-transform:rotate(360deg);
 		}
 	}
-	
-div {
+
+	@-webkit-keyframes vaivolta {
+		0% {
+			top:0;
+		}
+		50% {
+			top:20px;
+		}
+		100% {
+			top:40px;
+			border-radius:40px;
+		}
+	}
+
+	@-webkit-keyframes pendura {
+		from {
+			-webkit-transform: rotate(0deg);
+		}
+		to {
+			-webkit-transform: rotate(95deg);
+		}
+	}
+
+.giragira {
 	width:50px;
 	height:50px;
-	margin:30% auto 0;
+	margin:15px 0 0 15px;
 	background:black;
 
-
 	-webkit-animation: rodaroda 0.5s linear infinite;
+}
 
+.vaivolta {
+	width:50px;
+	height:50px;
+	margin:35px auto 0;
+	background:black;
+	position:absolute;
+	left:20%; 
+	-webkit-animation: vaivolta 1s alternate linear infinite;
+}
 
+.pendura {
+	width:50px;
+	height:50px;
+	margin:35px auto 0;
+	background:black;
+	-webkit-transform: rotate(0deg);
+	-webkit-transform-origin: 10px 10px;
+
+	-webkit-animation: pendura 1s alternate ease infinite;
 
 }
+
 	</style>
 </head>
 <body>
 
-<div></div>
+<div class="giragira"></div>
+<div class="vaivolta"></div>
+<div class="pendura"></div>
 
 </body>
 </html>
