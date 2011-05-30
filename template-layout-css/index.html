@@ -19,22 +19,37 @@
 		font:13px verdana, arial, tahoma, sans-serif;
 
 	}
-	
+
 	.geral {
 	width:950px;
 	margin:auto;
 		background:red;
 		display:
-		    "aa"
-			"bc"
-			"dd"
-			150px * 800px;
+		    "a    a   a"
+		    ".    .   ." /10px
+			"b    c   e"
+			".    .   ." /10px 
+			"d    d   d"
+			150px * 150px;
 		}
 		
 	.geral::slot(b) {background:gray;}
 	
-	aside {position:b; background:gray; padding:10px;}
-	section {position:c; padding:10px; background:lightgray;}
+	aside.menulateral {
+	    position:b;
+	    background:gray;
+	    padding:10px;
+	}
+	
+	aside.pub {
+	    position:e;
+	    background:purple;
+	}
+	section {
+	    position:c;
+	    padding:10px;
+	    background:lightgray;
+	}
 	
 	header {position:a;}
 	footer {position:d;}
@@ -56,17 +71,6 @@
 	CABECALHO
 </header>
 
-<aside class="menulateral">
-	<h3>MENU LATERAL</h3>
-	<ul>
-		<li><a href="">Opção 1</a></li>
-		<li><a href="">Opção 2</a></li>
-		<li><a href="">Opção 3</a></li>
-		<li><a href="">Opção 4</a></li>
-		<li><a href="">Opção 5</a></li>
-	</ul>
-</aside>
-
 <section>
 	<article>
 	<h1>Título</h1>
@@ -78,11 +82,24 @@
 	</article>
 </section>
 
+<aside class="menulateral">
+	<h3>MENU LATERAL</h3>
+	<ul>
+		<li><a href="">Opção 1</a></li>
+		<li><a href="">Opção 2</a></li>
+		<li><a href="">Opção 3</a></li>
+		<li><a href="">Opção 4</a></li>
+		<li><a href="">Opção 5</a></li>
+	</ul>
+</aside>
+
 <footer>
 	RODAPÉ
 </footer>
 
-
+<aside class="pub">
+	Aqui vai a publicidade da parada... Monetização!
+</aside>
 </div>
 
 </body>
