@@ -39,6 +39,45 @@
 			-webkit-transform: rotate(95deg);
 		}
 	}
+	
+	
+	
+	@-moz-keyframes rodaroda {
+		0% {
+			-moz-transform:rotate(0deg);
+		}
+		50% {
+			background:red;
+			-moz-transform:rotate(180deg);
+		}
+		100% {
+			-moz-transform:rotate(360deg);
+		}
+	}
+
+	@-moz-keyframes vaivolta {
+		0% {
+			top:0;
+		}
+		50% {
+			top:20px;
+		}
+		100% {
+			top:40px;
+			border-radius:40px;
+		}
+	}
+
+	@-moz-keyframes pendura {
+		from {
+			-moz-transform: rotate(0deg);
+		}
+		to {
+			-moz-transform: rotate(95deg);
+		}
+	}
+	
+	
 
 .giragira {
 	width:50px;
@@ -47,6 +86,9 @@
 	background:black;
 
 	-webkit-animation: rodaroda 0.5s linear infinite;
+	-moz-animation: rodaroda 0.5s linear infinite;
+	-o-animation: rodaroda 0.5s linear infinite;
+	animation: rodaroda 0.5s linear infinite;
 }
 
 .vaivolta {
@@ -57,6 +99,9 @@
 	position:absolute;
 	left:20%; 
 	-webkit-animation: vaivolta 1s alternate linear infinite;
+	-moz-animation: vaivolta 1s alternate linear infinite;
+	-o-animation: vaivolta 1s alternate linear infinite;
+	animation: vaivolta 1s alternate linear infinite;
 }
 
 .pendura {
@@ -67,7 +112,15 @@
 	-webkit-transform: rotate(0deg);
 	-webkit-transform-origin: 10px 10px;
 
+	-moz-transform: rotate(0deg);
+	-moz-transform-origin: 10px 10px;
+
+	-o-transform: rotate(0deg);
+	-o-transform-origin: 10px 10px;
+
 	-webkit-animation: pendura 1s alternate ease infinite;
+	-moz-animation: pendura 1s alternate ease infinite;
+	-o-animation: pendura 1s alternate ease infinite;
 
 }
 
@@ -78,8 +131,6 @@
 <div class="giragira"></div>
 <div class="vaivolta"></div>
 <div class="pendura"></div>
-
-<p>Nos testes que fizemos, até agora, isso tudo só funciona em Webkit. :-\</p>
 
 </body>
 </html>
