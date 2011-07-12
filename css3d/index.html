@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>CSS3 3D</title>
+	
+	<style>
+	    * {margin:0; padding:0;}
+	    
+	    body {
+	        font-family:arial;
+	        background:#efefef;
+	        color:#999;
+	    }
+	
+	    .geral {
+	        width:1300px;
+	        margin:0 auto;
+	        padding:100px 0 0;
+	    }
+	
+	    .destaque {
+	        width:400px;
+	        float:left;
+	        text-align:center;
+	        position:relative;
+	        margin-right:20px;        	
+        	-webkit-perspective: 600; 
+	    }
+	    
+	    .destaque:hover img {
+	        -webkit-transition:0.4s;
+	        -webkit-transform: rotateY(0deg);
+	    }
+	    .destaque:hover article {
+	        background:rgba(255,255,255,1);
+	        
+	        -webkit-transition:0.4s;
+            -webkit-transform: translateZ(0px) rotateY(0deg);	        
+	    }
+	    
+	    .destaque img {
+	        width:370px;
+	        border:10px solid #FFF;
+	        -webkit-box-shadow:0px 0px 80px rgba(0,0,0,0.2);
+	        -webkit-transition:0.4s;
+	        
+	        -webkit-transform: rotateY(-30deg);
+
+	    }
+	    
+	    .destaque article {
+	        background:rgba(255,255,255,0.8);
+	        width:250px;
+	        margin:0 0 0 -145px;
+	        padding:20px;
+	        position:absolute;
+	        top:70px;
+	        left:50%;
+	        
+            -webkit-transform: translateZ(70px) rotateY(-30deg);	        
+	        -webkit-transition:0.4s;
+	        
+	    }
+	    
+	    article {
+	        display:block; -webkit-box-shadow:0px 0px 40px rgba(0,0,0,0.8);
+	    }
+	    
+	    article p {
+	        text-align:center;
+	        font-size:13px;
+	        margin:0 0 15px;
+	    }
+	    
+	    article h1 {
+	        font:italic 20px georgia;
+	        color:#444;
+	        margin-bottom:10px;
+	    }
+	    
+	    article a {
+	        color:#FFF;
+	        text-decoration:none;
+	        background:#E38F2A;
+	        padding:5px 10px;
+	        font-size:12px;
+	        border-radius:5px;
+	        text-align:center;
+	        display:inline-block;
+	    }
+	    article a:hover {
+	        background:#CCC;
+	        color:#FFF;
+	    }
+	    
+	    
+    </style>
+	
+</head>
+<body>
+
+<div class="geral">
+    <section class="destaque">
+        <img src="images/img1.jpg">
+        <article>
+            <h1>Algum título</h1>
+            <p>
+                Lorem ispum dolor sit amet consectuer duran. Lorem ispum dolor sit dolor sit amet.
+            </p>
+            <a href="#" class="bt">Saiba mais</a>
+        </article>  
+    </section>
+    <section class="destaque">
+        <img src="images/img2.jpg">
+        <article>
+            <h1>Outro título</h1>
+            <p>
+                Lorem ispum dolor sit amet consectuer duran. 
+            </p>
+            <a href="#" class="bt">Saiba mais</a>
+        </article>  
+    </section>
+    <section class="destaque">
+        <img src="images/img3.jpg">
+        <article>
+            <h1>Talvez outro título</h1>
+            <p>
+                Lorem ispum dolor sit amet consectuer duran. Lorem ispum dolor sit amet consectuer duran. 
+            </p>
+            <a href="#" class="bt">Saiba mais</a>
+        </article>  
+    </section>
+</div>
+</body>
+</html>
