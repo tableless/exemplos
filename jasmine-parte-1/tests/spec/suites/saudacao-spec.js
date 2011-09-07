@@ -1,8 +1,11 @@
 describe('Exibição da mensagem de boas-vindas', function(){
   beforeEach(function(){
     setFixtures('<div id="mensagem" />');
-    this.horas = [];
     this.mensagem = $('#mensagem');
+  });
+
+  afterEach(function(){
+    this.horas = [];
   });
 
   it("Deve exibir 'Bom-dia!' entre 5:00 e 11:59", function(){
