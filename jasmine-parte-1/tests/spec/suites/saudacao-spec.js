@@ -2,13 +2,14 @@ describe('Exibição da mensagem de boas-vindas', function(){
   beforeEach(function(){
     setFixtures('<div id="mensagem" />');
     this.horas = [];
+    this.mensagem = $('#mensagem');
   });
 
   it("Deve exibir 'Bom-dia!' entre 5:00 e 11:59", function(){
     this.horas = ['05:00', '09:33', '10:22', '11:59'];
     for(i in this.horas){
       saudacao(this.horas[i]);
-      expect($('#mensagem').text()).toEqual('Bom-dia!');
+      expect(this.mensagem.text()).toEqual('Bom-dia!');
     }
   });
 
@@ -16,7 +17,7 @@ describe('Exibição da mensagem de boas-vindas', function(){
     this.horas = ['12:00', '13:33', '16:00', '17:59'];
     for(i in this.horas){
       saudacao(this.horas[i]);
-      expect($('#mensagem').text()).toEqual('Boa-tarde!');
+      expect(this.mensagem.text()).toEqual('Boa-tarde!');
     }
   });
 
@@ -24,7 +25,7 @@ describe('Exibição da mensagem de boas-vindas', function(){
     this.horas = ['18:00', '19:56', '22:43', '23:59'];
     for(i in this.horas){
       saudacao(this.horas[i]);
-      expect($('#mensagem').text()).toEqual('Boa-noite!');
+      expect(this.mensagem.text()).toEqual('Boa-noite!');
     }
   });
 
@@ -32,7 +33,7 @@ describe('Exibição da mensagem de boas-vindas', function(){
     this.horas = ['00:00', '01:01', '02:48', '04:59'];
     for(i in this.horas){
       saudacao(this.horas[i]);
-      expect($('#mensagem').text()).toEqual('Dormir é para os fracos!');
+      expect(this.mensagem.text()).toEqual('Dormir é para os fracos!');
     }
   });
 
@@ -43,13 +44,14 @@ describe('Exibição da mensagem de boas-vindas', function(){
 
     saudacao();
 
+    var texto = this.mensagem.text();
     if(hora < 5)
-      expect($('#mensagem').text()).toEqual('Dormir é para os fracos!');
+      expect(texto).toEqual('Dormir é para os fracos!');
     else if(hora < 12)
-      expect($('#mensagem').text()).toEqual('Bom-dia!');
+      expect(texto).toEqual('Bom-dia!');
     else if(hora < 18)
-      expect($('#mensagem').text()).toEqual('Boa-tarde!');
+      expect(texto).toEqual('Boa-tarde!');
     else
-      expect($('#mensagem').text()).toEqual('Boa-noite!');
+      expect(texto).toEqual('Boa-noite!');
   });
 });
