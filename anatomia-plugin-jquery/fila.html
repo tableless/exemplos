@@ -1,0 +1,65 @@
+
+<!doctype>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>Tableless - Anatomia de um plugin jQuery</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script type="text/javascript" src="jquery.fila.js"></script>
+		<link rel="stylesheet" href="exemplo.css" media="screen" type="text/css" />
+	</head>
+	<body>
+		<h1>Exemplo de plugin: jQuery.fila</h1>
+
+		<p><strong>Conferir o exemplo <a href="index.html">marcaTexto</a></strong> ou <a href="http://www.tableless.com.br/anatomia-de-um-plugin-jquery">Voltar para o post Anatomia de um plugin jQuery</a></p>
+
+		<p>Adicionando as classes "first" e "last", o padrão do plugin, ao primeiro e último ítem da lista abaixo.</p>
+		
+		<ul>
+			<li>Primeiro ítem</li>
+			<li>Segundo ítem</li>
+			<li>Último ítem</li>
+		</ul>
+		
+		<p>Adicionando a classe "primeiro" à primeira coluna de cada linha da tabela abaixo.</p>
+		
+		<table>
+			<tbody>
+				<tr>
+					<td>Data 1</td>
+					<td>Data 2</td>
+					<td>Data 3</td>
+				</tr>
+				<tr>
+					<td>Data 4</td>
+					<td>Data 5</td>
+					<td>Data 6</td>
+				</tr>
+				<tr>
+					<td>Data 7</td>
+					<td>Data 8</td>
+					<td>Data 9</td>
+				</tr>
+				<tr>
+					<td>Data 10</td>
+					<td>Data 11</td>
+					<td>Data 12</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<script type="text/javascript">
+		$(function(){
+			
+			$('ul').fila();
+			
+			$('table tbody tr').fila({
+				first: 'primeiro',
+				last: ''
+			});
+			
+		});
+		</script>
+		
+	</body>
+</html>
