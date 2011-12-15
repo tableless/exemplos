@@ -36,7 +36,38 @@
 	}
 	
 	#card figure img {width:200px}
+.geral { 
+	width: 200px;
+	height: 293px;
+	position: relative;
+	-webkit-perspective: 500;
+	margin:10% auto 0;
+}
 	
+.carta {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 1s;
+}
+.carta:hover {
+  -webkit-transform: rotateY(-180deg);
+}
+
+.frente{background:red}
+.atras{background:blue; -webkit-transform: rotateY(180deg);}
+.carta figure {
+	margin:0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+}
+
+.carta figure img {width:200px}
+
 	</style>
 </head>
 <body>
@@ -44,6 +75,10 @@
   <div id="card">
     <figure class="front"><img src="card-front.jpg"></figure>
     <figure class="back"><img src="card-back.jpg"></figure>
+<section class="geral">
+  <div class="carta">
+    <figure class="frente"><img src="card-front.jpg"></figure>
+    <figure class="atras"><img src="card-back.jpg"></figure>
   </div>
 </section>
 
