@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Perspective</title>
+	<style>
+	.pai {
+		border:1px solid #000; 
+		padding:0;
+		float:left;
+		margin:50px 100px;
+	}
+	.pai div {
+		width:200px;
+		height:200px;
+		color:#333;
+		font:bold 15px verdana;
+		padding:20px;
+		background:rgba(255,255,255,0.7);
+		border:1px solid #000;
+	}
+	.pai div.translateY {-webkit-transform:perspective(500) translateZ(-100px);}
+	.pai div.translateZ {-webkit-transform:perspective(500) translateZ(100px);}
+	.pai div.rotateY {-webkit-transform:perspective(500) rotateY(45deg);}
+	.pai div.rotateX {-webkit-transform:perspective(500) rotateX(45deg);}
+	
+	</style>
+</head>
+<body>
+
+	<div class="pai">
+		Pai
+		<div class="translateZ">
+			Translate Z.
+		</div>
+	</div>
+
+	<div class="pai">
+		Pai
+		<div class="translateY">
+			Translate Y.
+		</div>
+	</div>
+<br clear="all">
+	<div class="pai">
+		Pai
+		<div class="rotateY">
+			rotate Y
+		</div>
+	</div>
+
+	<div class="pai">
+		Pai
+		<div class="rotateX">
+			rotate X
+		</div>
+	</div>
+
+</body>
+</html>
+
+
+
+
+
