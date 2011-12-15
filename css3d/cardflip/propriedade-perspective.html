@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Perspective</title>
+	<style>
+	body {padding:100px}
+	div {
+		width:200px;
+		height:200px;
+		color:#FFF;
+		font:bold 15px verdana;
+		padding:20px;
+		float:left;
+	}
+
+	div.p1 {
+		background:red;
+		-webkit-transform: perspective(2000) rotateY(45deg);
+	}
+	
+	
+	div.p2 {
+		background:blue;
+		-webkit-transform: perspective(200) rotateY(45deg);
+	}
+	
+	</style>
+</head>
+<body>
+
+<div class="p1">
+	Pouca perspectiva
+</div>
+<div class="p2">
+	Muita perspectiva
+</div>
+<p>Perceba que ambos os elementos estão rotacionados a 45 graus.</p>
+
+
+</body>
+</html>
+
+
+
+
+
