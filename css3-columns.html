@@ -10,17 +10,23 @@
 	
 	<style type="text/css" media="screen">
 		div.texto {
+			height:500px;
 			border: 1px solid black;
-			-moz-column-count: 2; /* Define a quantidade de colunas, a largura é definida uniformimente. */
-			-webkit-column-count: 2;
+			-moz-column-count: 4; /* Define a quantidade de colunas, a largura é definida uniformimente. */
+			-webkit-column-count: 4;
 			
 			/* Define qual a largura mínima para as colunas. Se as colunas forem expremidas, fazendo com que a largura delas fique menor que este valor, elas se transformam em 1 coluna automaticamente */
-			-moz-column-width: 400px; 
-			-webkit-column-width: 400px; 
+			-moz-column-width: 200px; 
+			-webkit-column-width: 200px; 
 			
 			 /* Define o espaço entre as colunas. */
 			-moz-column-gap: 50px;
 			-webkit-column-gap: 50px;
+			-ms-column-gap: 50px;
+			column-gap: 50px;
+
+			-webkit-column-rule: 1px solid black;
+			
 			}
 	</style>
 	

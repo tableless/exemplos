@@ -5,15 +5,18 @@
 	<title></title>
 	<meta charset="utf-8">
 	<style>
+	
 	@-webkit-keyframes rodaroda {
 		0% {
 			-webkit-transform:rotate(0deg);
 		}
+
 		50% {
 			background:red;
 			-webkit-transform:rotate(180deg);
 		}
 		100% {
+			background:blue;
 			-webkit-transform:rotate(360deg);
 		}
 	}
@@ -85,7 +88,7 @@
 	margin:15px 0 0 15px;
 	background:black;
 
-	-webkit-animation: rodaroda 0.5s linear infinite;
+	-webkit-animation: rodaroda 1s linear alternate 3;
 	-moz-animation: rodaroda 0.5s linear infinite;
 	-o-animation: rodaroda 0.5s linear infinite;
 	animation: rodaroda 0.5s linear infinite;
