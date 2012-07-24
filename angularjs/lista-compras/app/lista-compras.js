@@ -8,6 +8,6 @@ function ListaComprasController($scope) {
         $scope.itens.push({produto: $scope.item.produto,
                            quantidade: $scope.item.quantidade,
                            comprado: false});
-        $scope.produto = $scope.quantidade = '';
+        $scope.item.produto = $scope.item.quantidade = '';
     };
 }
