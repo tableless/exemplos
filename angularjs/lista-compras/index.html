@@ -1,0 +1,45 @@
+<!doctype html>
+<html ng-app>
+	<head>
+		<title>Lista de compras com AngularJS</title>
+    <meta charset="utf-8">
+		<link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/lista-compras.css">
+		<script src="lib/angular-1.0.1.js"></script>
+		<script src="app/lista-compras.js"></script>
+	</head>
+	<body>
+		<div class="container" ng-controller="ListaComprasController">
+			<div class="row">
+				<div class="page-header">
+					<h1>Lista de compras</h1>
+				</div>
+			</div>
+			<div class="row">
+        <table id="lista-compras" class="table table-striped">
+          <thead>
+            <tr>
+              <th>Comprado?</th>
+              <th>Produto</th>
+              <th>Quantidade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="item in itens" class="comprado-{{ item.comprado }}">
+              <td><input type="checkbox" ng-model="item.comprado"></td>
+              <td><strong>{{ item.produto }}</strong></td>
+              <td>{{ item.quantidade }}</td>
+            </tr>
+          </tbody>
+        </table>
+			</div>
+      <div class="row">
+        <form class="form-inline" name="formItem">
+          <input type="text" ng-model="item.produto" placeholder="Produto">
+          <input type="number" ng-model="item.quantidade" placeholder="Quantidade" class="input-small">
+          <button class="btn btn-primary" ng-click="adicionaItem()">adicionar ítem</button>
+        </form>
+      </div>
+		</div>
+	</body>
+</html>
