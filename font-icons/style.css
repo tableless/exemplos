@@ -1,0 +1,213 @@
+@font-face {
+	font-family: 'icomoon';
+	src: url('fonts/icomoon.eot');
+	src: url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.svg#icomoon') format('svg'),
+		url('fonts/icomoon.woff') format('woff'),
+		url('fonts/icomoon.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'icomoon';
+	content: attr(data-icon);
+	speak: none;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+[class^="icon-"]:before, [class*=" icon-"]:before {
+	font-family: 'icomoon';
+	font-style: normal;
+	speak: none;
+}
+.icon-tablet:before {
+	content: "\21";
+}
+.icon-user:before {
+	content: "\22";
+}
+.icon-diamond:before {
+	content: "\23";
+}
+.icon-trophy:before {
+	content: "\24";
+}
+.icon-cube:before {
+	content: "\25";
+}
+.icon-puzzle:before {
+	content: "\26";
+}
+.icon-smiley:before {
+	content: "\27";
+}
+.icon-happy:before {
+	content: "\28";
+}
+.icon-download:before {
+	content: "\29";
+}
+.icon-cloud:before {
+	content: "\2a";
+}
+.icon-thumbs-up:before {
+	content: "\2b";
+}
+.icon-thumbs-down:before {
+	content: "\2c";
+}
+.icon-menu:before {
+	content: "\2d";
+}
+.icon-cars:before {
+	content: "\2e";
+}
+.icon-briefcase:before {
+	content: "\2f";
+}
+.icon-bus:before {
+	content: "\30";
+}
+.icon-bars:before {
+	content: "\31";
+}
+.icon-pie:before {
+	content: "\32";
+}
+.icon-comments:before {
+	content: "\33";
+}
+.icon-comments-2:before {
+	content: "\34";
+}
+.icon-user-2:before {
+	content: "\35";
+}
+.icon-gift:before {
+	content: "\37";
+}
+.icon-busy:before {
+	content: "\38";
+}
+.icon-drawer:before {
+	content: "\36";
+}
+.icon-box-remove:before {
+	content: "\39";
+}
+.icon-box-add:before {
+	content: "\3a";
+}
+.icon-phone:before {
+	content: "\3b";
+}
+.icon-arrow-down:before {
+	content: "\3c";
+}
+.icon-arrow-right:before {
+	content: "\3d";
+}
+.icon-arrow-up:before {
+	content: "\3e";
+}
+.icon-star:before {
+	content: "\3f";
+}
+.icon-star-2:before {
+	content: "\40";
+}
+.icon-star-3:before {
+	content: "\41";
+}
+.icon-heart:before {
+	content: "\42";
+}
+.icon-heart-2:before {
+	content: "\43";
+}
+.icon-cloud-2:before {
+	content: "\44";
+}
+.icon-remove:before {
+	content: "\45";
+}
+.icon-remove-2:before {
+	content: "\46";
+}
+.icon-briefcase-2:before {
+	content: "\47";
+}
+.icon-grid-view:before {
+	content: "\48";
+}
+.icon-github:before {
+	content: "\49";
+}
+.icon-github-2:before {
+	content: "\4a";
+}
+.icon-linkedin:before {
+	content: "\4b";
+}
+.icon-lastfm:before {
+	content: "\4c";
+}
+.icon-blogger:before {
+	content: "\4d";
+}
+.icon-tumblr:before {
+	content: "\4e";
+}
+.icon-dribbble:before {
+	content: "\4f";
+}
+.icon-flickr:before {
+	content: "\50";
+}
+.icon-gplus:before {
+	content: "\51";
+}
+.icon-facebook:before {
+	content: "\52";
+}
+.icon-IcoMoon:before {
+	content: "\53";
+}
+.icon-safari:before {
+	content: "\54";
+}
+.icon-opera:before {
+	content: "\55";
+}
+.icon-IE:before {
+	content: "\56";
+}
+.icon-firefox:before {
+	content: "\57";
+}
+.icon-chrome:before {
+	content: "\58";
+}
+.icon-css3:before {
+	content: "\59";
+}
+.icon-html5:before {
+	content: "\5a";
+}
+.icon-html5-2:before {
+	content: "\5b";
+}
+.icon-file-css:before {
+	content: "\5c";
+}
+.icon-file-xml:before {
+	content: "\5d";
+}
+.icon-file-zip:before {
+	content: "\5e";
+}
+.icon-file-powerpoint:before {
+	content: "\5f";
+}
