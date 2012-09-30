@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Exemplo Flexbox</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+
+.main {
+	width:500px;
+	background:gray;
+	height:500px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+
+	-webkit-flex-flow: column;
+	-moz-flex-flow: column;
+	-ms-flex-flow: column;
+	-o-flex-flow: column;
+	flex-flow: column;
+}
+
+.main div {
+	background:#CCC;
+	margin:10px;
+	-webkit-flex:1 1 auto;
+	-moz-flex:1 1 auto;
+	-ms-flex:1 1 auto;
+	-o-flex:1 1 auto;
+	flex:1 1 auto;
+	/*
+		A propriedade FLEX é uma atalho para a mesma coisa escrita abaixo
+		-webkit-flex-basis:auto;
+		-webkit-flex-shrink:1;
+		-webkit-flex-grow:1;
+	*/
+}
+
+
+.main div.primeiroDiv {
+    -webkit-order:2;
+    -moz-order:2;
+    -ms-order:2;
+    -o-order:2;
+    order:2;
+}
+.main div.segundoDiv {
+    -webkit-order:3;
+    -moz-order:3;
+    -ms-order:3;
+    -o-order:3;
+    order:3;
+}
+.main div.terceiroDiv {
+    -webkit-order:1;
+    -moz-order:1;
+    -ms-order:1;
+    -o-order:1;
+    order:1;
+}
+
+
+
+	</style>
+</head>
+<body>
+
+<div class="main">
+	<div class="primeiroDiv">Primeiro div </div>
+	<div class="segundoDiv">Segundo div</div>
+	<div class="terceiroDiv">Terceiro div</div>
+</div>
+
+</body>
+</html>
