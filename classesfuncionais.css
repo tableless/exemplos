@@ -11,6 +11,10 @@
 .dinlineblock, .dInlineBlock {display:inline-block; float:none;}
 .dnone, .dNone,
 .hide, .hide {display:none;}
+.hideAccessible {
+  position:absolute;
+  top:-9999px; left:-9999px;
+}
 
 .nomargin, .noMargin {margin:0;}
 .nomarginleft, .noMarginLeft, .row.noMarginLeft {margin-left:0;}
