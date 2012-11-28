@@ -1,0 +1,84 @@
+.nofloat, .noFloat {float:none;}
+.fright, .fRight {float:right;}
+.fleft, .fLeft {float:left;}
+
+.cboth, .cBoth {clear:both;}
+.cright, .cRight {clear:right;}
+.cleft, .cLeft {clear:left;}
+
+.dblock, .dBlock {display:block;}
+.dinline, .dInline {display:inline; float:none;}
+.dinlineblock, .dInlineBlock {display:inline-block; float:none;}
+.dnone, .dNone,
+.hide, .hide {display:none;}
+
+.nomargin, .noMargin {margin:0;}
+.nomarginleft, .noMarginLeft, .row.noMarginLeft {margin-left:0;}
+.nomarginright, .noMarginRight {margin-right:0;}
+.nomargintop, .noMarginTop {margin-top:0;}
+.nomarginbottom, .noMarginBottom {margin-bottom:0;}
+
+.nopadding, .noPadding {padding:0;}
+.nopaddingleft, .noPaddingLeft {padding-left:0;}
+.nopaddingright, .noPaddingRight {padding-right:0;}
+.nopaddingtop, .noPaddingTop {padding-top:0;}
+.nopaddingbottom, .noPaddingBottom {padding-bottom:0;}
+
+.txtLeft, .txtleft {text-align:left;}
+.txtRight, .txtright {text-align:right;}
+.txtJustify, .txtjustify {text-align:justify;}
+.txtCenter, .txtcenter {text-align:center;}
+
+.widthAuto, .widthAuto {width: auto;}
+.widthInherit {width: inherit;}
+
+.noborder, .noBorder {border:none;}
+.noborderright, .noBorderRight {border-right:none;}
+.noborderleft, .noBorderLeft {border-left:none;}
+.noborderbottom, .noBorderBottom {border-bottom:none;}
+.nobordertop, .noBorderTop {border-top:none;}
+
+hr, hr.sepDot {border:none; border-bottom:1px solid #e5e5e5; background:none; display:block; margin:15px 0;}
+.boxCollapse hr, .boxCollapse hr.sepDot {border-color:#c9c9c9;}
+hr.sepDot {border-bottom:1px dotted #E5E5E5;}
+hr.dotsSep {height: 5px; background: url(/img/titDots.png);  margin:20px 0;}
+hr.sep {background-color: #E5E5E5; }
+
+.noBullet, .noListStyle {list-style:none;}
+
+.cursorPointer, .cursorpointer {cursor: pointer;}
+.cursorDefault, .cursordefault {cursor: default;}
+.cursorCrosshair, .cursorcrosshair {cursor: crosshair}
+.cursorMove, .cursormove {cursor: move}
+.cursorHelp, .cursorhelp {cursor: help;}
+.cursorWait, .cursorwait {cursor: wait;}
+.cursorInherit, .cursorinherit {cursor: inherit;}
+.cursorText, .cursortext {cursor: text;}
+.cursorProgress, .cursorprogress {cursor: progress;}
+
+.cursorGrab, .cursorgrab {
+  cursor:hand;
+  cursor:grab;
+  cursor:-moz-grab;
+  cursor:-webkit-grab;
+}
+.cursorGrabbing, .cursorgrabbing {
+  cursor:grabbing;
+  cursor:-moz-grabbing;
+  cursor:-webkit-grabbing;
+}
+
+.marginBottom40 {
+  margin-bottom: 40px;
+}
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block !important;
+}
+
+/** COLORS **/
+.bgWhite {
+  background: white;
+}
