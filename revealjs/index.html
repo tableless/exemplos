@@ -37,7 +37,13 @@
       center: true,
       controls: false,
       mouseWheel: true,
-      transition: 'concave'
+      transition: 'concave',
+      dependencies: [
+        {
+          src: 'plugin/zoom-js/zoom.js',
+          async: true
+        }
+      ]
     });
     </script>
   </body>
