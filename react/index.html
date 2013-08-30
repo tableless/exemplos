@@ -56,11 +56,17 @@
         });
 
         var Product = React.createClass({
+            getInitialState: function() {
+                return {checked: false};
+            },
+            toggle: function () {
+                this.setState({checked: !this.state.checked});
+            },
             render: function () {
-                var checked = (this.props.checked ? 'checked' : '');
+                var checked = (this.state.checked ? 'checked' : '');
                 return (
                     <tr>
-                        <td><input type="checkbox" checked={checked} /></td>
+                        <td><input type="checkbox" checked={checked} onClick={this.toggle} /></td>
                         <td>{this.props.children}</td>
                         <td>{this.props.ammount}</td>
                     </tr>
@@ -75,7 +81,7 @@
                 if (!name) {
                     return false;
                 }
-                this.props.onProductSubmit({name: name, ammount: ammount, checked: false});
+                this.props.onProductSubmit({name: name, ammount: ammount});
                 //TODO: validação, salvar no server
                 this.refs.name.getDOMNode().value = '';
                 this.refs.ammount.getDOMNode().value = '';
