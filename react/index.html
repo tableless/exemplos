@@ -1,0 +1,102 @@
+<!doctype html>
+<html ng-app>
+    <head>
+        <title>Lista de compras com AngularJS</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div id="container" class="container"></div>
+        <script type="text/javascript" src="react.js"></script>
+        <script type="text/javascript" src="JSXTransformer.js"></script>
+        <script type="text/jsx">
+        /**
+        * @jsx React.DOM
+        */
+        var ShoppingBox = React.createClass({
+            handleProductSubmit: function(product) {
+                var products = this.state.data;
+                products.push(product);
+                this.setState({data: products});
+                // TODO: salvar no server
+            },
+            getInitialState: function() {
+                return {data: []};
+            },
+            render: function () {
+                return (
+                    <div>
+                        <h1>Minha Lista de Compras</h1>
+                        <ShoppingTable data={this.state.data} />
+                        <ShoppingForm onProductSubmit={this.handleProductSubmit} />
+                    </div>
+                );
+            }
+        });
+
+        var ShoppingTable = React.createClass({
+            render: function () {
+                var productNodes = this.props.data.map(function (product) {
+                    return <Product ammount={product.ammount} checked={product.checked}>{product.name}</Product>;
+                });
+                return (
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Comprado?</th>
+                                <th>Produto</th>
+                                <th>Quantidade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {productNodes}
+                        </tbody>
+                    </table>
+                );
+            }
+        });
+
+        var Product = React.createClass({
+            render: function () {
+                var checked = (this.props.checked ? 'checked' : '');
+                return (
+                    <tr>
+                        <td><input type="checkbox" checked={checked} /></td>
+                        <td>{this.props.children}</td>
+                        <td>{this.props.ammount}</td>
+                    </tr>
+                );
+            }
+        });
+
+        var ShoppingForm = React.createClass({
+            handleSubmit: function() {
+                var name = this.refs.name.getDOMNode().value.trim(),
+                    ammount = this.refs.ammount.getDOMNode().value.trim() || 1;
+                if (!name) {
+                    return false;
+                }
+                this.props.onProductSubmit({name: name, ammount: ammount, checked: false});
+                //TODO: validação, salvar no server
+                this.refs.name.getDOMNode().value = '';
+                this.refs.ammount.getDOMNode().value = '';
+                return false;
+            },
+            render: function () {
+                return (
+                    <form class="form-inline" role="form" onSubmit={this.handleSubmit}>
+                        <input type="text" placeholder="Produto" ref="name" />
+                        <input type="number" placeholder="Quantidade" ref="ammount" />
+                        <button type="submit">adicionar ítem</button>
+                    </form>
+                );
+            }
+        });
+
+        React.renderComponent(
+            <ShoppingBox />,
+            document.getElementById('container')
+        );
+        </script>
+    </body>
+</html>
+
