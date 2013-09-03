@@ -3,6 +3,8 @@
     <head>
         <title>Lista de compras com ReactJS</title>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <link rel="stylesheet" href="shopping-list.css">
     </head>
     <body>
         <div id="container" class="container"></div>
@@ -39,7 +41,7 @@
                     return <Product ammount={product.ammount} checked={product.checked}>{product.name}</Product>;
                 });
                 return (
-                    <table>
+                    <table class="table">
                         <thead>
                             <tr>
                                 <th>Comprado?</th>
@@ -90,9 +92,13 @@
             render: function () {
                 return (
                     <form class="form-inline" role="form" onSubmit={this.handleSubmit}>
-                        <input type="text" placeholder="Produto" ref="name" />
-                        <input type="number" placeholder="Quantidade" ref="ammount" />
-                        <button type="submit">adicionar ítem</button>
+                        <div class="form-group">
+                            <input type="text" placeholder="Produto" ref="name" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <input type="number" placeholder="Quantidade" ref="ammount" class="form-control" />
+                        </div>
+                        <button type="submit" class="btn btn-primary">adicionar ítem</button>
                     </form>
                 );
             }
