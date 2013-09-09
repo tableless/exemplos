@@ -59,7 +59,7 @@
 
         var Product = React.createClass({
             getInitialState: function() {
-                return {checked: false};
+                return {checked: this.props.checked || false};
             },
             toggle: function () {
                 this.setState({checked: !this.state.checked});
