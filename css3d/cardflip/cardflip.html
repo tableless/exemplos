@@ -6,43 +6,34 @@
 	<title>Perspective</title>
 	<style>
 
-@-webkit-keyframes gira {
-  0% {
-    
-  }
-}
-
 .geral { 
-	width: 200px;
-	height: 293px;
-	position: relative;
-	-webkit-perspective: 1200;
-	margin:10% auto 0;
-  outline:1px solid red;
+  width: 200px;
+  height: 293px;
+  position: relative;
+  margin:10% auto 0;
+  -webkit-perspective: 500;
 }
 	
 .carta {
   width: 100%;
   height: 100%;
-  outline:1px solid orange;
   position: absolute;
+  -webkit-transform-style: preserve-3d;
   -webkit-transition: -webkit-transform 1s;
-  -webkit-transform-origin:0 0;
 }
 .carta:hover {
-  -webkit-transform: rotateX(-180deg);
+  -webkit-transform: rotateY(-180deg);
 }
 
-.atras{-webkit-transform: rotateY(180deg);}
+.atras {-webkit-transform: rotateY(180deg);}
 
 .carta figure {
   margin:0;
   display: block;
+  position: absolute;
   width: 100%;
   height: 100%;
-  position: absolute;
   -webkit-backface-visibility: hidden;
-
 }
 
 .carta figure img {width:200px}
