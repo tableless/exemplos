@@ -2,15 +2,92 @@
   <head>
     <title></title>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="imageareaselect/css/imgareaselect-default.css" /> 
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.8.3/jquery-ui.min.js"></script>
     <script type="text/javascript" src="imageareaselect/scripts/jquery.imgareaselect.pack.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.8.3/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="imageareaselect/css/imgareaselect-default.css" />
+    <style>
+    p{
+      position:relative
+    }
+    div.form-tag{
+      position:absolute;
+      top:0;
+      left:0;
+      z-index:1000;
+    }
+    span.tag{
+      position:absolute;
+      border:1px solid #df0d32;
+      background-color:rgba(255, 255, 255, 0.2);
+      display:inline-block;
+      color:#df0d32;
+    }
+    </style>
   </head>
   <body>
-    <img src="ramones.jpg" width="500" height="500" id="ramones" />
-    
-    <script type="text/javascript"> 
-      $(document).ready(function () { 
-        $('img#ramones').imgAreaSelect({ handles: true }); 
+    <p><img src="ramones.jpg" id="foto" /></p>
+    <p><a href="#" class="toggle-tags">ocultar tags</a></p>
+
+    <script type="text/javascript">
+      var formTag = function(img, selection){
+        $('.form-tag').remove();
+        if(selection.width > 0 && selection.height > 0){
+          $('<div class="form-tag"><input type="text" size="20" class="tag-name" /></div>').insertAfter(img);
+          $('.form-tag')
+            .css({
+              top : (selection.y1 + selection.height),
+              left : selection.x1
+            })
+            .find('input.tag-name')
+              .focus()
+              .data('selection', selection);
+        }
+      };
+
+      var limpaFormTag = function(){
+        $('.form-tag').remove();
+        ias.setOptions({hide:true});
+        ias.update();
+      };
+
+      $('input.tag-name').live('keyup', function(e){
+        if(e.keyCode == 13 || e.which == 13){ // enter
+          if($(this).val() != ""){
+            var selection = $(this).data('selection');
+            $('<span class="tag">'+$(this).val()+'</span>').appendTo($(this).parent().parent());
+            $('.tag:last')
+              .css({
+                height: selection.height,
+                width: selection.width,
+                top: selection.y1,
+                left:selection.x1
+              })
+              .draggable({ containment: '#foto' })
+              .resizable({ containment: '#foto', ghost: true });
+            limpaFormTag();
+          }
+        }else if(e.keyCode == 27 || e.which == 27){ // esc
+          limpaFormTag();
+        }
+      });
+
+      $('.toggle-tags').click(function(e){
+        $('.tag').toggle();
+        if($('.tag:visible').length > 0)
+          $(this).text('ocultar tags');
+        else
+          $(this).text('exibir tags');
+        e.preventDefault();
+      });
+
+      $('#foto').imgAreaSelect({
+        handles: true,
+        instance: true,
+        onSelectEnd: formTag,
+        onSelectStart: function(){
+          $('.form-tag').remove();
+        }
       });
     </script>
   </body>
