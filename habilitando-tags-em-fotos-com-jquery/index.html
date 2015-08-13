@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title></title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="imageareaselect/css/imgareaselect-default.css" /> 
+    <script type="text/javascript" src="imageareaselect/scripts/jquery.imgareaselect.pack.js"></script>
+  </head>
+  <body>
+    <img src="ramones.jpg" width="500" height="500" id="ramones" />
+    
+    <script type="text/javascript"> 
+      $(document).ready(function () { 
+        $('img#ramones').imgAreaSelect({ handles: true }); 
+      });
+    </script>
+  </body>
+</html>
